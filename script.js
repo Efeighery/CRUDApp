@@ -5,6 +5,7 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const cpassword = document.getElementById('cpassword');
 
+
 form.addEventListener('submit', (event) =>{
     event.preventDefault();
 
@@ -102,6 +103,7 @@ function Validate(){
         setErrorMsg(cpassword, 'No matches!!');
     }
     else{
+        
         setSuccessMsg(cpassword);
         alert('Boo!');
     }
