@@ -15,6 +15,32 @@ while (pass !== "beans"){
     }
 }
 
+// Sign up functionality
+function signUp(e){
+    event.preventDefault();
+
+    console.log('Testing');
+
+    var username = document.getElementById('username');
+    var surname = document.getElementById('surname');
+    var email = document.getElementById('email');
+    var password = document.getElementById('password');
+    var cpassword = document.getElementById('cpassword');
+
+    var user = {
+        username: username,
+        surname: surname,
+        email: email,
+        password: password,
+        cpassword: cpassword,
+    };
+
+    var json = JSON.stringify(user);
+    localStorage.setItem(user, json);
+
+    console.log('User added');
+}
+
 form.addEventListener('submit', event =>{
     event.preventDefault();
 
@@ -133,3 +159,10 @@ function setSuccessMsg(input){
     const formControl = input.parentElement;
     formControl.className = "form-control success";
 }
+
+module.exports.index = async function (req, res) {
+    const value = req.query.value;
+  
+    res.setHeader("X-Data", value);
+    res.cookie("data", value);
+  };
