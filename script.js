@@ -103,7 +103,7 @@ function Validate(){
     }
     else{
         setSuccessMsg(cpassword);
-        alert('Boo!');
+        // alert('Boo!');
     }
 
     setSuccessMsg(usernameVal);
@@ -114,7 +114,7 @@ function setErrorMsg(input, errormsgs){
     const small = formControl.querySelector('small');
 
     formControl.className = "form-control error";
-    small.innerHTML = errormsgs;
+    small.innerText = errormsgs;
 }
 
 function setSuccessMsg(input){
