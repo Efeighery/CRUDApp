@@ -5,10 +5,20 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const cpassword = document.getElementById('cpassword');
 
-form.addEventListener('submit', (event) =>{
+var pass;
+
+while (pass !== "beans"){
+    pass = prompt("Guess the password to enter the application");
+
+    if(pass === "beans"){
+        break;
+    }
+}
+
+form.addEventListener('submit', event =>{
     event.preventDefault();
 
-    Validate();
+    validateInputs(username, surname, email, password, cpassword);
 });
 
 const sendData = (usernameVal, sRate, Count) =>{
@@ -42,7 +52,7 @@ const isEmail = (emailVal) =>{
     return true;
 }
 
-function Validate(){
+function validateInputs(){
     const usernameVal = username.value.trim();
     const surnameVal = surname.value.trim();
     const emailVal = email.value.trim();
