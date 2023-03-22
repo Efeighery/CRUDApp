@@ -44,7 +44,7 @@ function signUp(e){
 form.addEventListener('submit', event =>{
     event.preventDefault();
 
-    validateInputs(username, surname, email, password, cpassword);
+    validateInputs();
 });
 
 const sendData = (usernameVal, sRate, Count) =>{
