@@ -49,7 +49,7 @@ form.addEventListener('submit', event =>{
 
 const sendData = (usernameVal, sRate, Count) =>{
     if(sRate === Count){
-        swal("Hello "+usernameVal+ "; Registration complete!", "success");
+        console.log("Hello "+usernameVal+ "; Registration complete!", "success");
     }
 }
 
