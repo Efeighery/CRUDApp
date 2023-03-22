@@ -114,6 +114,8 @@ function setErrorMsg(input, errormsgs){
     const small = formControl.querySelector('small');
 
     formControl.className = "form-control error";
+    
+    // Avoids XSS attacks (DOM based)
     small.innerText = errormsgs;
 }
 
