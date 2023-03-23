@@ -13,7 +13,8 @@
                 <h2>Registration FORM</h2>
             </div>
 
-            <form onsubmit="signUp()" class="form" id="form">
+            <form  class="form" id="form">
+                <input type="hidden" name="_csrf" value="<%=csrfToken %>"/>
                 <div class="form-control">
                     <label>First Name</label>
                     <input type="text" name="" id="username" placeholder="Enter first name" autocomplete="off">

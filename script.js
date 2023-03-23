@@ -11,6 +11,18 @@ form.addEventListener('submit', (event) =>{
     Validate();
 })
 
+// Potential broken access control technique?
+var pass = prompt('Finish this phrase: She sells seashells....');
+
+while(pass !== "by the seashore"){
+    if(pass === "by the seashore"){
+        break;
+    }
+}
+
+alert("Welcome, welcome");
+
+
 const sendData = (usernameVal, sRate, Count) => {
     if(sRate === Count){
         swal("Hello " + usernameVal , "You are Registered", "success");
@@ -42,6 +54,8 @@ const isEmail = (emailVal) =>{
     return true;
 }
 
+
+// Used to prevent potential code injection through input validation
 function Validate(){
     const usernameVal = username.value.trim();
     const surnameVal = surname.value.trim();
@@ -113,7 +127,7 @@ function setErrorMsg(input, errormsgs){
 
     formControl.className = "form-control error";
     
-    // Avoids XSS attacks (DOM based)
+    // Avoids XSS attacks (DOM based) via Inner Text
     small.innerText = errormsgs;
 }
 
@@ -122,6 +136,7 @@ function setSuccessMsg(input){
     formControl.className = "form-control success";
 }
 
+// Keep HTTP responses from session fixation
 module.exports.index = async function (req, res) {
     const value = req.query.value;
   
