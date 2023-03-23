@@ -1,9 +1,9 @@
-const form = document.getElementById('form').textContent;
-const username = document.getElementById('username').textContent;
-const surname = document.getElementById('surname').textContent;
-const email = document.getElementById('email').textContent;
-const password = document.getElementById('password').textContent;
-const cpassword = document.getElementById('cpassword').textContent;
+const form = document.getElementById('form');
+const username = document.getElementById('username');
+const surname = document.getElementById('surname');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const cpassword = document.getElementById('cpassword');
 
 form.addEventListener('submit', (event) =>{
     event.preventDefault();
