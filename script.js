@@ -17,7 +17,7 @@ while (pass !== "beans"){
 
 // Sign up functionality
 function signUp(e){
-    event.preventDefault();
+    e.preventDefault();
 
     console.log('Testing');
 
@@ -45,6 +45,7 @@ form.addEventListener('submit', event =>{
     event.preventDefault();
 
     validateInputs();
+    signUp();
 });
 
 const sendData = (usernameVal, sRate, Count) =>{
@@ -74,7 +75,7 @@ const isEmail = (emailVal) =>{
     if(atSymbol < 1) return false;
     var dot = emailVal.lastIndexOf('.');
     if(dot <= atSymbol + 2) return false;
-    if(dot === emailVal.length -1) return false;
+    // if(dot === emailVal.length -1) return false;
     return true;
 }
 
@@ -138,7 +139,7 @@ function validateInputs(){
         setErrorMsg(cpassword, 'No matches!!');
     }
     else{
-        setSuccessMsg(cpassword);
+        setSuccessMsg(cpassword, 'Registration complete');
         // alert('Boo!');
     }
 
