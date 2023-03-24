@@ -1,0 +1,1 @@
+# LoginSystem.sql is needed to help activate the database
