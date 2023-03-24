@@ -143,3 +143,26 @@ module.exports.index = async function (req, res) {
     res.setHeader("X-Data", value);
     res.cookie("data", value);
   };
+
+// CSRF implementation strategy
+const express = require('express');
+const bodyParser = require('body-parser');
+const csrf = require('csurf');
+const cookieParser = require('cookie-parser')
+
+const app = express();
+const csrfProtection = csrf({ cookie: true });
+
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({extended: true}));
+app.set('view engine', 'ejs');
+
+app.get('/', csrfProtection, (req, res) =>{
+    res.render('index', {csrfToken: req.csrfToken() });
+});
+
+app.post('index', csrfProtection, (req, res, next) => {
+    res.send(req.body.username);
+});
+
+app.listen(8080);
