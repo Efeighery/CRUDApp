@@ -60,6 +60,7 @@ function Validate(){
     else{
         setSuccessMsg(username);
     }
+    alert("Psyche!");
     setSuccessMsg(usernameVal);
 }
 
