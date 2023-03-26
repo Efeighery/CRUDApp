@@ -5,6 +5,7 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const cpassword = document.getElementById('cpassword');
 
+// When the submit button is clicked, the method used to validate user account credentials is triggered within the Event Listener
 form.addEventListener('submit', (event) =>{
     event.preventDefault();
 
@@ -44,7 +45,7 @@ const SuccessMsg = (usernameVal) => {
     }
 }
 
-
+// Validating the email to see if it's written in the way that it was intended
 const isEmail = (emailVal) =>{
     var atSymbol = emailVal.indexOf('@');
     if(atSymbol < 1) return false;
@@ -63,7 +64,7 @@ function Validate(){
     const passwordVal = password.value.trim();
     const cpasswordVal = cpassword.value.trim();
 
-    //username
+    // Checking the first name to see if meets the specified length
     if(usernameVal === ""){
         setErrorMsg(username, 'first name cannot be blank');
     }
@@ -74,8 +75,7 @@ function Validate(){
         setSuccessMsg(username);
     }
 
-    //last name
-
+    // Checking the surname to see if meets the specified length
     if(surnameVal === ""){
         setErrorMsg(surname, 'last name cannot be blank');
     }
@@ -86,7 +86,7 @@ function Validate(){
         setSuccessMsg(surname);
     }
 
-    //email
+    // Checking the email to see if meets the specified length
     if(emailVal === ""){
         setErrorMsg(email, 'email cannot be blank');
     }
@@ -97,7 +97,7 @@ function Validate(){
         setSuccessMsg(email);
     }
 
-    //password
+    // Analysing the password to see if it met credentials
     if(passwordVal === ""){
         setErrorMsg(password, 'password cannot be blank');
     }
@@ -108,7 +108,7 @@ function Validate(){
         setSuccessMsg(password);
     }
 
-    //confirm password
+    //Confirming password to see if they match with the password
     if(cpasswordVal === ""){
         setErrorMsg(cpassword, 'confirm password cannot be blank');
     }
@@ -121,6 +121,8 @@ function Validate(){
     SuccessMsg(usernameVal);
 
 }
+
+// Setting the error message if the credentials for all fields aren't met
 function setErrorMsg(input, errormsgs){
     const formControl = input.parentElement;
     const small = formControl.querySelector('small');
@@ -131,6 +133,7 @@ function setErrorMsg(input, errormsgs){
     small.innerText = errormsgs;
 }
 
+// Setting the success message if the credentials for all fields are met
 function setSuccessMsg(input){
     const formControl = input.parentElement;
     formControl.className = "form-control success";
