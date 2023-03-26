@@ -50,7 +50,6 @@ function Validate(){
     const passwordVal = password.value.trim();
     const cpasswordVal = cpassword.value.trim();
 
-
     // username
     if(usernameVal === ""){
         setErrorMsg(username, 'First name can NOT be blank');
@@ -61,53 +60,6 @@ function Validate(){
     else{
         setSuccessMsg(username);
     }
-
-    // last name
-    if(surnameVal === ""){
-        setErrorMsg(surname, 'Surname can NOT be blank');
-    }
-    else if (surnameVal.length <=5){
-        setErrorMsg(surname, '6 characters at most');
-    }
-    else{
-        setSuccessMsg(surname);
-    }
-
-    // email
-    if(emailVal === ""){
-        setErrorMsg(email, 'Email can NOT be blank');
-    }
-    else if (!isEmail(emailVal)){
-        setErrorMsg(email, 'Email isnt valid');
-    }
-    else{
-        setSuccessMsg(email);
-    }
-
-    // password
-    if(passwordVal === ""){
-        setErrorMsg(password, 'Password can NOT be blank');
-    }
-    else if (passwordVal.length <=7){
-        setErrorMsg(password, '8 characters at most');
-    }
-    else{
-        setSuccessMsg(password);
-    }
-
-        // Confirm password
-    if(cpasswordVal === ""){
-        setErrorMsg(cpassword, 'Password can NOT be blank');
-    }
-    else if (passwordVal != cpasswordVal){
-        setErrorMsg(cpassword, 'No matches!!');
-    }
-    else{
-        
-        setSuccessMsg(cpassword);
-        alert('Boo!');
-    }
-
     setSuccessMsg(usernameVal);
 }
 
