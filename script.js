@@ -158,7 +158,7 @@ const csrfProtection = csrf({ cookie: true });
 
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
-app.set('view engine', 'ejs');
+app.set('view engine', 'html');
 
 app.get('/', csrfProtection, (req, res) =>{
     res.render('index', {csrfToken: req.csrfToken() });
