@@ -10,6 +10,10 @@ connection.connect((error) =>{
         console.log('Error connection to MYSQL');
     }
     console.log('Connection has been established');
+
+    const statement = "INSERT INTO users "+(id, firstname, surname, email, password)+" VALUES";
+
+    console.log(statement);
 });
 connection.end((error) =>{
 });
