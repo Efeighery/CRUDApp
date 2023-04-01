@@ -14,6 +14,7 @@
                 <h2>Registration FORM</h2>
             </div>
 
+            <!--The form used to register and save user account details with a hidden CSRF token for security measures--->
             <form  class="form" id="form">
                 <input type="hidden" name="_csrf" value="<%=csrfToken %>"/>
                 <div class="form-control">
@@ -21,6 +22,7 @@
                     <input type="text" name="" id="username" placeholder="Enter first name" autocomplete="off">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
+                    <!--These error messages will trigger if they don't follow the registration guidelines--->
                     <small>Error message</small>
                 </div>                
                 <div class="form-control">
@@ -28,6 +30,7 @@
                     <input type="text" name="" id="surname" placeholder="Enter surname" autocomplete="off">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
+                    <!--These error messages will trigger if they don't follow the registration guidelines--->
                     <small>Error message</small>
                 </div>
                 <div class="form-control">
@@ -35,6 +38,7 @@
                     <input type="text" name="" id="email" placeholder="Enter Email Address" autocomplete="off">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
+                    <!--These error messages will trigger if they don't follow the registration guidelines--->
                     <small>Error message</small>
                 </div>
                 <div class="form-control">
@@ -42,6 +46,7 @@
                     <input type="password" name="" id="password" placeholder="Enter Password" autocomplete="off">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
+                    <!--These error messages will trigger if they don't follow the registration guidelines--->
                     <small>Error message</small>
                 </div>
                 <div class="form-control">
@@ -49,6 +54,7 @@
                     <input type="password" name="" id="cpassword" placeholder="Confirm Password" autocomplete="off">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
+                    <!--These error messages will trigger if they don't follow the registration guidelines--->
                     <small>Error message</small>
                 </div>
                 <input type="submit" value="Submit" class="btn">

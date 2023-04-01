@@ -1,3 +1,4 @@
+# Both the database and the table is created here, along with some dummy table entries
 CREATE DATABASE box;
 
 CREATE TABLE users(

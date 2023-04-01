@@ -23,7 +23,7 @@ while(pass !== "by the seashore"){
 
 alert("Welcome, welcome");
 
-
+// A pop up will show if a user has registered credentials that follow the designated criteria; please see the Validate function for more information
 const sendData = (usernameVal, sRate, Count) => {
     if(sRate === Count){
         swal("Hello " + usernameVal , "You are Registered", "success");
