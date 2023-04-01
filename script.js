@@ -130,6 +130,7 @@ function setErrorMsg(input, errormsgs){
     formControl.className = "form-control error";
     
     // Avoids XSS attacks (DOM based) via Inner Text
+    // Reference: https://www.linkedin.com/pulse/innerhtml-vs-innertext-textcontent-shraddha-yadav/
     small.innerText = errormsgs;
 }
 
@@ -148,6 +149,7 @@ module.exports.index = async function (req, res) {
   };
 
 // CSRF implementation strategy
+// Reference: https://blog.sessionstack.com/how-javascript-works-csrf-attacks-7-mitigation-strategies-757dfb08e7a6
 const express = require('express');
 const bodyParser = require('body-parser');
 const csrf = require('csurf');
